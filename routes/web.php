@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Intervention\Image\Image;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +32,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
         Route::get('datatable','PermissionController@getDatatable')->name('datatable');
     });
 
-    Route::prefix('productcategories')->name('productcategories.')->group(function() {
-        Route::get('datatable','ProductCategoryController@getDatatable')->name('datatable');
-        Route::any('/{category}/publish','ProductCategoryController@publish')->name('publish');
-    });
-
     Route::prefix('categories')->name('categories.')->group(function() {
         Route::get('datatable','CategoryController@getDatatable')->name('datatable');
         Route::any('/{category}/publish','CategoryController@publish')->name('publish');
@@ -48,25 +42,45 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
         Route::any('/{post}/publish','PostController@publish')->name('publish');
     });
 
-    Route::prefix('products')->name('products.')->group(function() {
-        Route::get('datatable','ProductController@getDatatable')->name('datatable');
-        Route::any('/{post}/publish','ProductController@publish')->name('publish');
-    });
-
     Route::prefix('menucategories')->name('menucategories.')->group(function() {
         Route::get('datatable','MenuCategoryController@getDatatable')->name('datatable');
         Route::any('/{post}/publish','MenuCategoryController@publish')->name('publish');
+    });
+
+    Route::prefix('diems')->name('diems.')->group(function() {
+        Route::get('nhap-diem','DiemController@nhapdiem')->name('nhapdiem');
+        Route::get('tra-cuu-diem','DiemController@tracuudiem')->name('tracuudiem');
+        Route::post('thuc-hien-nhap-diem','DiemController@performNhapdiem')->name('thnhapdiem');
+        Route::any('kiem-tra-diem-theo-mshv','DiemController@checkDiemByMSHV')->name('checkdiembymshv');
+    });
+
+    Route::prefix('hocviens')->name('hocviens.')->group(function() {
+        Route::get('nhap-hoc-vien','HocVienController@getImport')->name('nhaphv');
+        Route::get('datatable','HocVienController@getDatatable')->name('datatable');
+        Route::post('process-import','HocVienController@processImport')->name('processimport');
+        Route::any('kiem-tra-hoc-vien-theo-mshv','HocVienController@checkHVByMSHV')->name('checkhvbymshv');
+    });
+
+    Route::prefix('lops')->name('lops.')->group(function() {
+        Route::any('hvtheolop','LopController@getHocvienTheoLop')->name('hvtheolop');
+    });
+
+    Route::prefix('qdthis')->name('qdthis.')->group(function() {
+        Route::get('xet-dieu-kien-du-thi','QuyetDinhThiController@xetDkdtForm')->name('xetdkdtfrm');
+        Route::any('laydshv','QuyetDinhThiController@layDsHv')->name('laydshv');
     });
     
     // Resource shoud be placed behind static
     Route::resource('users','UserController');    
     Route::resource('groups','GroupController');    
-    Route::resource('permissions','PermissionController');        
-    Route::resource('productcategories','ProductCategoryController');        
+    Route::resource('permissions','PermissionController');             
     Route::resource('categories','CategoryController');        
-    Route::resource('posts','PostController');        
-    Route::resource('products','ProductController');        
+    Route::resource('posts','PostController');               
     Route::resource('menucategories','MenuCategoryController');        
+    Route::resource('qdthis','QuyetDinhThiController');        
+    Route::resource('diems','DiemController');        
+    Route::resource('hocviens','HocVienController');        
+    Route::resource('lops','LopController');        
 });
 
 

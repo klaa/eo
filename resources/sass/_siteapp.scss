@@ -1,0 +1,82 @@
+$font-color-light: #eee;
+$font-color-dark: #111;
+.bg {
+    &-blue {
+        background: #24C6DC;
+        background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+        background: linear-gradient(to right, #514A9D, #24C6DC);
+        color: $font-color-light !important;
+    }
+    &-blue2 {
+        background: #373B44;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: $font-color-light !important;
+    }
+    &-gray {
+        background: #283048;
+        background: -webkit-linear-gradient(to right, #859398, #283048);
+        background: linear-gradient(to right, #859398, #283048);
+        color: $font-color-light !important;
+    }
+    &-xanhngoc {
+        background: #1CD8D2;
+        background: -webkit-linear-gradient(to right, #93EDC7, #1CD8D2);
+        background: linear-gradient(to right, #93EDC7, #1CD8D2);
+        color: $font-color-dark !important;
+    }
+    &-forest {
+        background: #5A3F37;
+        background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);
+        background: linear-gradient(to right, #2C7744, #5A3F37);
+        color: $font-color-light !important;
+    }
+    &-royal {
+        background: #141E30;
+        background: -webkit-linear-gradient(to right, #243B55, #141E30);
+        background: linear-gradient(to right, #243B55, #141E30);
+        color: $font-color-light !important;
+    }
+    &-cloud {
+        background: #E0EAFC;
+        background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);
+        background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+        color: $font-color-dark !important;
+    }
+    &-tim {
+        background: #DA22FF;
+        background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);
+        background: linear-gradient(to right, #9733EE, #DA22FF);
+        color: $font-color-light !important;
+    }
+    &-do {
+        background: #D31027;
+        background: -webkit-linear-gradient(to right, #EA384D, #D31027);
+        background: linear-gradient(to right, #EA384D, #D31027);
+        color: $font-color-light !important;
+    }
+    &-vang {
+        background: #fffc00;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffffff, #fffc00);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ffffff, #fffc00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: $font-color-dark !important;
+    }
+    &-cam {
+        background: #f12711;
+        background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+        background: linear-gradient(to right, #f5af19, #f12711);
+        color: $font-color-light !important;
+    }
+}
+body {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2NkwAT/GdHE/gP5jMiCYAGQIpggXAAmiCIAEgQAAE4FBbECyZcAAAAASUVORK5CYII=') #333;
+    color: #eee;
+    &.light {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAgMAAADwAc52AAAADFBMVEUAAAD///////////84wDuoAAAABHRSTlMAR++rXqRonAAAABdJREFUCNdjYDzAwObAIMnAkMLAMIEBABB7AhUTdXhYAAAAAElFTkSuQmCC') #ddd;   
+        color: #111;
+    }
+}
+#canvas {
+    position: fixed;
+    // z-index: 1;
+}

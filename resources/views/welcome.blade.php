@@ -95,5 +95,13 @@
         </div>
 
         <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/face-api.min.js') }}" type="text/javascript"></script>
+        <script type="text/javascript">
+            // console.log(faceapi.nets)
+            async function runFaceRecognition(params) {
+                const sjo = await faceapi.nets.ssdMobilenetv1.loadFromUri('/models')
+                
+            }
+        </script>
     </body>
 </html>

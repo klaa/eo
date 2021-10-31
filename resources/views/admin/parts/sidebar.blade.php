@@ -58,7 +58,7 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-blog"></i>
         <span>{{ __('admin.post') }}</span>
@@ -74,61 +74,113 @@
           <a class="collapse-item" href="{{ route('admin.posts.create') }}">{{ __('admin.post_create') }}</a>
         </div>
       </div>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="true" aria-controls="collapseMenu">
-        <i class="fas fa-fw fa-bars"></i>
-        <span>{{ __('admin.menu_management') }}</span>
-      </a>
-      <div id="collapseMenu" class="collapse" aria-labelledby="headingMenu" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">{{ __('admin.menu_category') }}:</h6>
-          <a class="collapse-item" href="{{ route('admin.menucategories.index') }}">{{ __('admin.menu_category_list') }}</a>
-          <a class="collapse-item" href="{{ route('admin.menucategories.create') }}">{{ __('admin.menu_category_create') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.menu') }}:</h6>          
-          <a class="collapse-item" href="{{ route('admin.posts.index') }}">{{ __('admin.menu_list') }}</a>
-          <a class="collapse-item" href="{{ route('admin.posts.create') }}">{{ __('admin.menu_create') }}</a>
-        </div>
-      </div>
-    </li>
-
-    @if(config('app.shop_enabled'))
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseProduct">
-        <i class="fas fa-fw fa-shopping-cart"></i>
-        <span>{{ __('admin.shop') }}</span>
-      </a>
-      <div id="collapseProduct" class="collapse" aria-labelledby="headingProduct" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">{{ __('admin.product_category') }}:</h6>
-          <a class="collapse-item" href="{{ route('admin.productcategories.index') }}">{{ __('admin.category_list') }}</a>
-          <a class="collapse-item" href="{{ route('admin.productcategories.create') }}">{{ __('admin.category_create') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.product') }}:</h6>          
-          <a class="collapse-item" href="{{ route('admin.products.index') }}">{{ __('admin.product_list') }}</a>
-          <a class="collapse-item" href="{{ route('admin.products.create') }}">{{ __('admin.product_create') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.orders') }}:</h6>          
-          <a class="collapse-item" href="#">{{ __('admin.orders') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.customers') }}:</h6>          
-          <a class="collapse-item" href="#">{{ __('admin.customers') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.reports') }}:</h6>          
-          <a class="collapse-item" href="#">{{ __('admin.reports') }}</a>
-
-          <h6 class="collapse-header">{{ __('admin.shop_settings') }}:</h6>          
-          <a class="collapse-item" href="#">{{ __('admin.settings') }}</a>
-
-        </div>
-      </div>
-    </li>
-    @endif
+    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+    
+    <div class="sidebar-heading">
+      {{ __('admin.tuyensinh') }}
+    </div>
+
+    <!-- Nav Item - Quyết định thi Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSinhvien" aria-expanded="true" aria-controls="collapseSinhvien">
+        <i class="fas fa-fw fa-users"></i>
+        <span>{{ __('admin.qlsinhvien') }}</span>
+      </a>
+      <div id="collapseSinhvien" class="collapse" aria-labelledby="headingsinhvien" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.sinhvien') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.hocviens.index') }}">{{ __('admin.list') }}</a>
+          <a class="collapse-item" href="{{ route('admin.hocviens.create') }}">{{ __('admin.create') }}</a>
+          <a class="collapse-item" href="{{ route('admin.hocviens.nhaphv') }}">{{ __('admin.import') }}</a>
+        </div>
+      </div>
+      <!-- Quản lý lớp học -->
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLophoc" aria-expanded="true" aria-controls="collapseLophoc">
+        <i class="fas fa-fw fa-warehouse"></i>
+        <span>{{ __('admin.qllophoc') }}</span>
+      </a>
+      <div id="collapseLophoc" class="collapse" aria-labelledby="headinglophoc" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.lophoc') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.lops.index') }}">{{ __('admin.list') }}</a>
+          <a class="collapse-item" href="{{ route('admin.lops.create') }}">{{ __('admin.create') }}</a>
+        </div>
+      </div>
+
+      <!-- Quản lý Quyết định trúng tuyển -->
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQDTT" aria-expanded="true" aria-controls="collapseLophoc">
+        <i class="fas fa-fw fa-file"></i>
+        <span>{{ __('admin.qlqdtt') }}</span>
+      </a>
+    <div id="collapseQDTT" class="collapse" aria-labelledby="headinglophoc" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.qdtt') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.lops.index') }}">{{ __('admin.list') }}</a>
+          <a class="collapse-item" href="{{ route('admin.lops.create') }}">{{ __('admin.create') }}</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    
+    <div class="sidebar-heading">
+      {{ __('admin.daotao') }}
+    </div>
+
+    <!-- Nav Item - Quyết định thi Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQLMon" aria-expanded="true" aria-controls="collapseQLMon">
+        <i class="fas fa-fw fa-atlas"></i>
+        <span>{{ __('admin.qlmonhoc') }}</span>
+      </a>
+      <div id="collapseQLMon" class="collapse" aria-labelledby="headingQDThis" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.qlmonhoc') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.qdthis.index') }}">{{ __('admin.list') }}</a>
+          <a class="collapse-item" href="{{ route('admin.qdthis.create') }}">{{ __('admin.create') }}</a>
+        </div>
+      </div>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    
+    <div class="sidebar-heading">
+      {{ __('admin.khaothi') }}
+    </div>
+
+    <!-- Nav Item - Quyết định thi Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQLDiem" aria-expanded="true" aria-controls="collapseQLDiem">
+        <i class="fas fa-fw fa-file-alt"></i>
+        <span>{{ __('admin.qldiem') }}</span>
+      </a>
+      <div id="collapseQLDiem" class="collapse" aria-labelledby="headingQDThis" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.qldiem') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.diems.nhapdiem') }}">{{ __('admin.nhapdiem') }}</a>
+          <a class="collapse-item" href="{{ route('admin.diems.tracuudiem') }}">{{ __('admin.tracuudiem') }}</a>
+        </div>
+      </div>
+
+            
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQDThi" aria-expanded="true" aria-controls="collapseQDThi">
+        <i class="fas fa-fw fa-file-alt"></i>
+        <span>{{ __('admin.qlthi') }}</span>
+      </a>
+      <div id="collapseQDThi" class="collapse" aria-labelledby="headingQDThis" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">{{ __('admin.qlthi') }}:</h6>
+          <a class="collapse-item" href="{{ route('admin.qdthis.xetdkdtfrm') }}">{{ __('admin.xetdkdt') }}</a>
+        </div>
+      </div>
+      
+    </li>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

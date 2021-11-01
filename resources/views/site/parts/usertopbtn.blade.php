@@ -2,7 +2,7 @@
     <div class="text-right">
         <div class="btn-group" role="group">
             <button id="userTopBtn" type="button" class="btn @if(!$mobile) bg-vang @else bg-blue2 @endif dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              Nguyễn Hữu Khánh
+              <i class="far fa-user"></i> Nguyễn Hữu Khánh
             </button>
             <div class="dropdown-menu" aria-labelledby="userTopBtn">
               <a class="dropdown-item" href="#">{{ __('home.user_info') }}</a>

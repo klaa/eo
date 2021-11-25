@@ -17,7 +17,7 @@ class CreateMonsTable extends Migration
             $table->id();
             $table->string('ten');
             $table->string('mamon')->unique();
-            $table->integer('so_tin_chi');
+            $table->integer('so_tin_chi')->default(0);
             $table->integer('ti_le_diem_thi')->default(60);
             $table->timestamps();
         });

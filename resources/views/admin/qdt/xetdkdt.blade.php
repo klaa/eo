@@ -92,8 +92,8 @@
                 <div class="col form-group">
                     <label for="frmMamon">{{ __('admin.mamon') }}</label>
                     <select name="mamon" id="frmMamon" class="form-control selectpicker" data-live-search="true" title="Chọn môn" data-size="8">
-                        @foreach ($dsm as $k => $item)
-                            <option value="{{ $k }}">{{ $k." - ".$item }}</option>
+                        @foreach ($dsm as $item)
+                            <option value="{{ $item->mamon }}">{{ $item->mamon." - ".$item->ten }}</option>
                         @endforeach
                     </select>
                 </div>

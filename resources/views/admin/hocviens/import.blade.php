@@ -100,13 +100,13 @@
                     <button id="readFromClipboard" type="button" class="btn btn-info">{{ __('admin.readfromclipboard') }}</button>
                 </div>
                 <div class="form-group col">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-info active">
-                          <input type="radio" value="1" name="hedt" id="option1" checked> Kết hợp
-                        </label>
-                        <label class="btn btn-info">
-                          <input type="radio" value="2" name="hedt" id="option2"> Elearning
-                        </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="hedt" id="hedt1" value="1">
+                        <label class="form-check-label" for="hedt1">Kết hợp</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="hedt" id="hedt2" value="2" checked>
+                        <label class="form-check-label" for="hedt2">Elearning</label>
                     </div>
                 </div>
             </div>

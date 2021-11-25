@@ -49,6 +49,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
 
     Route::prefix('diems')->name('diems.')->group(function() {
         Route::get('nhap-diem','DiemController@nhapdiem')->name('nhapdiem');
+        Route::get('nhap-diem-truyen-thong','DiemController@nhapdiem')->name('nhapdiemtt');
         Route::get('tra-cuu-diem','DiemController@tracuudiem')->name('tracuudiem');
         Route::post('thuc-hien-nhap-diem','DiemController@performNhapdiem')->name('thnhapdiem');
         Route::any('kiem-tra-diem-theo-mshv','DiemController@checkDiemByMSHV')->name('checkdiembymshv');

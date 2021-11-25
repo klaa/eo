@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('pagetitle',__('admin.nhapdiem'))
+@section('pagetitle',__('admin.nhapdieme'))
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -114,7 +114,7 @@
     @csrf
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">{{ __('admin.nhapdiem') }}</h6>
+          <h6 class="m-0 font-weight-bold text-primary">{{ __('admin.nhapdieme') }}</h6>
         </div>
         <div class="card-body">
             <div class="form-row">
@@ -133,7 +133,7 @@
                     <label for="formMon">{{ __('admin.monthi') }}</label>
                     <select name="mon" id="formMon" class="form-control selectpicker" data-live-search="true" title="Chọn môn thi" data-size="8">
                         @foreach ($mons as $item)
-                            <option value="{{ $item->id }}">{{ $item->ten }}</option>
+                            <option value="{{ $item->id }}">{{ $item->ten.'-'.$item->mamon }}</option>
                         @endforeach
                     </select>
                 </div>
